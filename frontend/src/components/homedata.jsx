@@ -10,8 +10,9 @@ import axios from "axios";
 import io from "socket.io-client";
 import "./homedata.css";
 import BarChart from "../pages/Barchart";
+import { BASE_URL } from "../config";
 
-const socket = io("http://localhost:5000"); // your backend server
+const socket = io(`${BASE_URL}`); // your backend server
 
 function Homedata() {
   const [summary, setSummary] = useState({
@@ -26,8 +27,8 @@ function Homedata() {
     const fetchSummary = async () => {
       try {
         const [attendanceRes, studentsRes] = await Promise.all([
-          axios.get("http://localhost:5000/api/attendance/summary"),
-          axios.get("http://localhost:5000/api/students"),
+          axios.get(`${BASE_URL}/api/attendance/summary`),
+          axios.get(`${BASE_URL}/api/students`),
         ]);
 
         const summaryData = attendanceRes.data;

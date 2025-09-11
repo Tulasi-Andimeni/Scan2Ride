@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from './studentdetails.module.css';
 import axios from "axios";
+import { BASE_URL } from "./config";
 import {
   FaBus, FaIdBadge, FaUser, FaMapMarkerAlt,
   FaPhoneAlt, FaHashtag, FaEye, FaTrash, FaPlus
@@ -31,7 +32,7 @@ const StudentsDetail = () => {
 
   const fetchStudents = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/students");
+      const res = await axios.get(`${BASE_URL}/api/students`);
       const active = res.data.filter(s => !s.deleted);
       const deleted = res.data.filter(s => s.deleted);
       setStudents(active);
@@ -47,7 +48,7 @@ const StudentsDetail = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this student?")) return;
     try {
-      await axios.put(`http://localhost:5000/api/students/soft-delete/${id}`);
+      await axios.put(`${BASE_URL}/api/students/soft-delete/${id}`);
       fetchStudents();
     } catch (err) {
       console.error("Delete failed:", err);
@@ -61,7 +62,7 @@ const StudentsDetail = () => {
       return;
     }
     try {
-      await axios.post("http://localhost:5000/api/students", newStudent);
+      await axios.post(`${BASE_URL}/api/students`, newStudent);
       alert("Student added successfully!");
       setShowModal(false);
       setNewStudent({ studentid: '', name: '', busNumber: '', location: '', branch: '' });

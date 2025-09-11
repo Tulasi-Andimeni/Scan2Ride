@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { BASE_URL } from '../config';
 import './login.css';
 
 function ResetPassword() {
@@ -21,7 +22,7 @@ function ResetPassword() {
     }
 
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/reset-password', { email, password });
+      const res = await axios.post(`${BASE_URL}/api/auth/reset-password`, { email, password });
       toast.success(res.data.message);
       setTimeout(() => navigate('/signin'), 2000);
     } catch (err) {

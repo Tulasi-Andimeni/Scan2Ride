@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { BASE_URL } from '../config';
 import './login.css';
 
 function VerifyOTP() {
@@ -15,7 +16,7 @@ function VerifyOTP() {
     e.preventDefault();
 
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/verify-otp', { email, otp });
+      const res = await axios.post(`${BASE_URL}/api/auth/verify-otp`, { email, otp });
       toast.success(res.data.message);
       setTimeout(() => {
         navigate('/reset-password', { state: { email, role } });

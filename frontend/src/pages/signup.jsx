@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { BASE_URL } from '../config';
 import axios from 'axios';
 import './signup.css';
 import {
@@ -39,7 +40,7 @@ function SignUp() {
     }
 
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/signup', {
+      const res = await axios.post(`${BASE_URL}/api/auth/signup`, {
         name,
         email,
         password,

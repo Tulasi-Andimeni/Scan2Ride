@@ -6,6 +6,7 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './forgotpassword.css';
+import { BASE_URL } from '../config';
 
 function ForgotPassword() {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ function ForgotPassword() {
 
     try {
       // Example: Replace this API with your backend endpoint
-await axios.post('http://localhost:5000/api/auth/send-otp', { email, role });
+await axios.post(`${BASE_URL}/api/auth/send-otp`, { email, role });
 // await axios.post('http://localhost:5000/api/auth/forgot-password', {
 //   adminEmail: email,
 //   // dateOfBirth: '', // You'll add this next

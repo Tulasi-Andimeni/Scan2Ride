@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Bar } from "react-chartjs-2";
 import axios from "axios";
 import { io } from "socket.io-client";
+import { BASE_URL } from "../config";
 import {
   Chart as ChartJS,
   BarElement,
@@ -15,7 +16,7 @@ import {
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
-const socket = io("http://localhost:5000"); // Adjust if your backend is hosted elsewhere
+const socket = io(`${BASE_URL}`); // Adjust if your backend is hosted elsewhere
 
 function BarChart() {
   const [busData, setBusData] = useState([]);
@@ -37,7 +38,7 @@ function BarChart() {
 
   const fetchBusWiseData = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/attendance/bus-wise");
+      const res = await axios.get(`${BASE_URL}/api/attendance/bus-wise`);
       setBusData(res.data);
     } catch (err) {
       console.error("Error fetching bus-wise data", err);

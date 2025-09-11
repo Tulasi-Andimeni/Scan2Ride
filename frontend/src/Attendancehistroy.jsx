@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Attendancehistroy.css";
+import { BASE_URL } from "./config";
 
 const AttendanceHistory = () => {
   const [date, setDate] = useState(new Date().toISOString().split("T")[0]);
@@ -9,7 +10,7 @@ const AttendanceHistory = () => {
   useEffect(() => {
     const fetchRecords = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/attendance?date=${date}`);
+        const res = await axios.get(`${BASE_URL}/api/attendance?date=${date}`);
         setRecords(res.data);
       } catch (err) {
         console.error("Error fetching history:", err);
