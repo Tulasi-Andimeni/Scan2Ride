@@ -1,0 +1,595 @@
+
+:root {
+  --accent-orange: #FF8A00;
+  --deep-black: #0D0D0D;
+  --dark-brown: #4D2702;
+  --white: #FFFFFF;
+  --light-gray: #EFE5D8;
+  --shadow-light: 0 4px 12px rgba(255, 138, 0, 0.20);
+  --shadow-deep: 0 8px 24px rgba(0, 0, 0, 0.15);
+  --return-bg: #FFF9F2;
+  --return-border: #FF8A00;
+
+  /* Custom Colors for Buttons */
+  --btn-delete: red;
+  --btn-edit: #007BFF; 
+}
+
+/* html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  background-color: var(--deep-black);
+  color: var(--white);
+} */
+/* 
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+} */
+
+/*  Main Container */
+.container {
+  width: 100vw;
+  height: 100vh;
+  padding: 1rem;
+  background-color: var(--deep-black);
+  color: var(--white);
+  overflow-x: hidden;
+  animation: floatIn 0.8s cubic-bezier(.4,0,.2,1);
+}
+
+/* Heading */
+
+
+ .heading {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 2.5rem;
+  font-family: "Ancizar Serif", serif;
+  font-weight: 900;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #ff8100 20%, #ffdc52 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 16px #ff8100aa);
+  animation: headingGlow 2.5s infinite alternate;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes headingGlow {
+  0% { filter: drop-shadow(0 2px 16px #ff8100aa); }
+  100% { filter: drop-shadow(0 4px 32px #ffdc52cc); }
+} 
+.headingLine {
+  width: 180px;
+  height: 4px;
+  position: relative;
+  left: 43%;
+  top: -5%;
+  background: linear-gradient(to right, #ff8100, #ffdc52);
+  border-radius: 5px;
+  box-shadow: 0 0 10px #ff8100aa;
+}
+
+
+
+
+
+
+/*  Search Input */
+.searchInput {
+  width: 100%;
+  max-width: 500px;
+  padding: 0.8em 1.2em;
+  border-radius: 14px;
+  border: none;
+  outline: none;
+  font-size: 1.08rem;
+  background: rgba(255,255,255,0.85);
+  color: #181818;
+  font-family: "Ancizar Serif", serif;
+  box-shadow: 0 2px 16px 0 #ff810033, 0 1.5px 8px #ffdc5233;
+  transition: 
+    box-shadow 0.3s,
+    background 0.3s,
+    border 0.3s;
+  backdrop-filter: blur(4px);
+  margin: 0 auto 1.5rem auto;
+  display: block;
+  position: relative;
+  top: -1%;
+    animation: floatIn 0.10s cubic-bezier(.4,0,.2,1);
+}
+
+.searchInput:focus {
+  background: #fff;
+  box-shadow: 0 4px 24px #ff810088, 0 0 0 2px #ff8100;
+  border: 1px solid #ff8100;
+}
+
+.searchInput::placeholder {
+  color: #ff8100;
+  opacity: 0.7;
+  font-style: italic;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+
+/* Grid Layout - Responsive card grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 4rem;
+  justify-items: center;
+  align-items: stretch;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  position: relative;
+  top: 20px;
+    animation: floatIn 0.8s cubic-bezier(.4,0,.2,1);
+}
+
+/* Driver Card Styles */
+/* .card {
+  background: black;
+  border-radius: 16px;
+  padding: 1.2rem;
+  text-align: center;
+  box-shadow: var(--shadow-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 100%;
+  width: 400px;
+ 
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(255, 138, 0, 0.6);
+  cursor: pointer;
+} */
+
+.card {
+  background: rgba(30, 30, 30, 0.85);
+  border-radius: 24px;
+  padding: 2rem 1.2rem 1.2rem 1.2rem;
+  text-align: center;
+  box-shadow: 0 8px 32px 0 rgba(255, 138, 0, 0.25), 0 1.5px 8px #ff810055;
+  border: 2.5px solid rgba(255, 138, 0, 0.13);
+  position: relative;
+  overflow: hidden;
+  transition: 
+    transform 0.35s cubic-bezier(.4,2,.3,1),
+    box-shadow 0.35s,
+    border 0.25s;
+  backdrop-filter: blur(6px);
+  z-index: 1;
+  width: 290px;
+  left: 2%;
+  height: 390px;
+  top: -7%;
+  animation: floatIn 0.8s cubic-bezier(.4,0,.2,1);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: -60%; left: -60%;
+  width: 220%;
+  height: 220%;
+  background: conic-gradient(from 180deg, #ff8100 0%, #ffdc52 40%, #ff8100 100%);
+  opacity: 0.13;
+  z-index: 0;
+  filter: blur(12px);
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.035) ;
+  border: 2.5px solid #ff8100;
+}
+
+.card:hover::before {
+  opacity: 0.22;
+}
+
+.card .image, .imagePreview img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ff8100;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 16px #ff8100aa, 0 0 0 8px #fff2;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+
+.card:hover .image, .card:hover .imagePreview img {
+  border: 4px solid #ffdc52;
+}
+
+.card .title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  margin-top: 0.5rem;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 8px #ff8100aa;
+    animation: floatIn 0.8s cubic-bezier(.4,0,.2,1);
+}
+
+.card .feature {
+  margin: 0.5rem 0;
+  font-size: 1.05rem;
+  color: #ffdc52;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  text-shadow: 0 1px 4px #ff8100aa;
+}
+
+.card .feature span {
+  background: #fff;
+  color: #181818;
+  border-radius: 6px;
+  padding: 0 8px;
+  font-weight: 600;
+  box-shadow: 0 1px 4px #ff8100aa;
+}
+
+.card .btn-buy1, .card .btn-buy2, .card .btn-buy0 {
+  margin: 0.5rem 0.3rem 0 0.3rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(90deg, #ff8100 60%, #ffdc52 100%);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 2px 8px #ff810055;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  padding: 0.5rem 1.1rem;
+  cursor: pointer;
+}
+
+.card .btn-buy1:hover { background: #ff4d4d; color: #fff; transform: scale(1.08);}
+.card .btn-buy2:hover { background: #ffaa00; color: #fff; transform: scale(1.08);}
+.card .btn-buy0:hover { background: #4CAF50; color: #fff; transform: scale(1.08);}
+
+.image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent-orange);
+  margin-bottom: 1rem;
+}
+
+.plusCard {
+  font-size: 3rem;
+  color: var(--accent-orange);
+  line-height: 100px;
+  font-weight: bold;
+    animation: floatIn 0.8s cubic-bezier(.4,0,.2,1);
+}
+
+/*  Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 0.5rem;
+  overflow-x: hidden;
+  flex-wrap: wrap;
+}
+
+.pageBtn,
+.navBtn {
+  padding: 0.6rem 1.2rem;
+  background: var(--white);
+  color: var(--deep-black);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  box-shadow: var(--shadow-light);
+  transition: background 0.3s, color 0.3s;
+}
+
+.pageBtn:hover,
+.navBtn:hover {
+  background: var(--accent-orange);
+  color: var(--white);
+}
+
+.activePage {
+  background: var(--accent-orange);
+  color: var(--white);
+  font-weight: bold;
+  border: 2px solid var(--white);
+    animation: floatIn 0.15s cubic-bezier(.4,0,.2,1);
+}
+
+/*  Buttons */
+.deleteBtn {
+  background-color: var(--btn-delete);
+  color: var(--white);
+  border: none;
+  padding: 0.4rem 0.8rem;
+  font-size: 13px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: var(--shadow-light);
+  transition: background-color 0.3s;
+   font-family: "Ancizar Serif", serif;
+    animation: floatIn 0.20s cubic-bezier(.4,0,.2,1);
+}
+
+.deleteBtn:hover {
+  background-color: darkred;
+}
+
+.editBtn {
+  background-color: var(--btn-edit);
+  color: var(--white);
+  border: none;
+  padding: 0.4rem 0.8rem;
+  font-size: 13px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: var(--shadow-light);
+  transition: background-color 0.3s;
+   font-family: "Ancizar Serif", serif;
+}
+
+.editBtn:hover {
+  background-color: #0056b3;
+}
+
+.viewBtn,
+.closeBtn {
+  background-color: var(--accent-orange);
+  color: var(--white);
+  border: none;
+  padding: 0.4rem 0.8rem;
+  font-size: 13px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: var(--shadow-light);
+  transition: background-color 0.3s;
+   font-family: "Ancizar Serif", serif;
+}
+
+.viewBtn:hover,
+.closeBtn:hover {
+  background-color: #e67600;
+}
+
+/* Toggle View */
+.toggleContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  gap: 1.2rem;
+  position: relative;
+  top: -20px;
+  z-index: 2;
+  animation: floatIn 0.20s cubic-bezier(.4,0,.2,1);
+}
+
+.toggleBtn {
+  background: rgba(26, 26, 26, 0.92);
+  color: var(--white);
+  border: 2px solid transparent;
+  padding: 0.7rem 1.6rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: "Ancizar Serif", serif;
+  font-size: 1.08rem;
+  letter-spacing: 0.7px;
+  box-shadow: 0 2px 12px #ff810033;
+  transition:
+    background 0.25s,
+    color 0.25s,
+    border 0.25s,
+    box-shadow 0.25s;
+  position: relative;
+  overflow: hidden;
+   
+}
+
+.toggleBtn::after {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; right: 0; bottom: 0;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #ff8100 0%, #ffdc52 100%);
+  opacity: 0;
+  z-index: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.toggleBtn:hover,
+.toggleBtn:focus {
+  background: rgba(255, 129, 0, 0.12);
+  color: #ff8100;
+  border: 2px solid #ff8100;
+  /* box-shadow: 0 4px 24px #ff810088; */
+}
+
+.toggleBtn:hover::after,
+.toggleBtn:focus::after {
+  opacity: 0.18;
+}
+
+.activeToggle {
+  background: linear-gradient(90deg, #ff8100 60%, #ffdc52 100%);
+  color: #fff;
+  font-weight: bold;
+  font-family: "Ancizar Serif", serif;
+  font-size: 1.08rem;
+  letter-spacing: 0.7px;
+  border: 2px solid #ff8100;
+  /* box-shadow: 0 2px 10px #ff810088; */
+  position: relative;
+  z-index: 1;
+  animation: activePulse 1.2s infinite alternate;
+    animation: floatIn 0.20s cubic-bezier(.4,0,.2,1);
+}
+
+@keyframes activePulse {
+  0% { box-shadow: 0 4px 15px #ff810088; }
+  100% { box-shadow: 0 2px 15px #ffdc52aa; }
+}
+
+/* Modal Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeOverlayIn 0.3s ease forwards;
+}
+
+@keyframes fadeOverlayIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal {
+  background: var(--deep-black);
+  padding: 2rem;
+  border-radius: 16px;
+  color: var(--white);
+  width: 90%;
+  max-width: 440px;
+  box-shadow: var(--shadow-light);
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal input {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  background-color: var(--light-gray);
+  color: var(--deep-black);
+  /* border: 2px solid red; */
+}
+
+.modalActions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modalActions button {
+  padding: 0.6rem 1rem;
+  background: var(--accent-orange);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+   font-family: "Ancizar Serif", serif;
+}
+
+/* Image Preview inside Modal*/
+.imagePreview {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.imagePreview img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent-orange);
+}
+
+/* Edited Info Text in Card*/
+.editedInfo {
+  font-size: 0.8rem;
+  color: var(--light-gray);
+  margin-top: 0.5rem;
+   font-family: "Ancizar Serif", serif;
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* Responsive Overrides */
+@media (max-width: 640px) {
+  .card {
+    padding: 1rem;
+  }
+
+  .image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .searchInput {
+    font-size: 0.9rem;
+  }
+
+  .modal {
+    padding: 1.5rem;
+  }
+}
+
+
+/* Allow scroll but hide bar visually */
+/* .container {
+  overflow-y: scroll;
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+
+.container::-webkit-scrollbar {
+  display: none; 
+} */

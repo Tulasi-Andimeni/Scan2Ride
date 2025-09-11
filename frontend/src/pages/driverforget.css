@@ -1,0 +1,182 @@
+.driver-forgot-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #000;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+}
+
+/* Header */
+.driver-forgot-header {
+  padding: 2rem;
+  text-align: center;
+  background-color: #111;
+  animation: slideDown 0.6s ease-in-out;
+}
+
+.driver-forgot-title {
+  font-size: 2.5rem;
+  color: #ff8A00;
+}
+
+/* Body Layout */
+.driver-forgot-body {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  gap: 3rem;
+}
+
+/* Left Panel */
+.driver-forgot-left-panel {
+  flex: 1;
+  background: url('/scan8.png') no-repeat center center;
+  background-size: contain;
+  min-height: 450px;
+  animation: fadeIn 1s ease forwards;
+}
+
+/* Right Panel (Form Box) */
+.driver-forgot-right-panel {
+  flex: 1;
+  max-width: 450px;
+  background-color: #111;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(255, 138, 0, 0.4);
+  animation: slideUp 0.8s ease-out;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Heading and Description */
+.driver-forgot-heading {
+  text-align: center;
+  color: #ff8A00;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.driver-forgot-description {
+  text-align: center;
+  color: #ccc;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+/* Input Group */
+.driver-forgot-input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 0.6s ease-in-out;
+}
+
+.driver-forgot-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: #ff8A00;
+  font-size: 1.1rem;
+}
+
+.driver-forgot-input {
+  width: 100%;
+  padding: 0.9rem 1rem 0.9rem 3rem;
+  border-radius: 30px;
+  border: none;
+  background-color: #000;
+  color: white;
+  font-size: 1rem;
+  box-shadow: inset 0 0 5px #ccc;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.driver-forgot-input:focus {
+  box-shadow: 0 0 10px #ff8a00;
+}
+
+/* Button */
+.driver-forgot-submit-btn {
+  width: 60%; /* Optional: Reduce width for better centering */
+  margin: 1rem auto; /* Center horizontally */
+  display: block;    /* Required for margin auto to work */
+  padding: 0.9rem;
+  background: linear-gradient(90deg, #ff8a00, #ff6a00);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  animation: fadeInUp 0.8s ease-in-out;
+}
+
+
+.driver-forgot-submit-btn:hover {
+  background: linear-gradient(90deg, #ff6a00, #ff8a00);
+}
+
+/* Footer Text */
+.driver-forgot-footer-text {
+  margin-top: 20px;
+  text-align: center;
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+.driver-forgot-login-link {
+  color: #ff8A00;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .driver-forgot-body {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .driver-forgot-left-panel {
+    height: 200px;
+    background-size: cover;
+  }
+
+  .driver-forgot-right-panel {
+    width: 100%;
+  }
+
+  .driver-forgot-submit-btn {
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+  }
+}

@@ -1,0 +1,443 @@
+
+.titleBar {
+  position: sticky;
+  top: 4%;
+  z-index: 999;
+  background-color: #1c1c1c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+}
+
+.titleText {
+  width: 38%;
+  position: sticky;
+  position: relative;
+  left: -1%;
+  text-align: center;
+  font-size: 2.3rem;
+  font-family: "Ancizar Serif", serif;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #fff;
+  position: relative;
+  margin: 0 auto 32px auto;
+  padding: 5px 20px 5px 20px;
+  background: orange;
+  border-radius: 22px;
+  box-shadow:
+    0 2px 10px 0 #ff8100aa,
+    0 1.5px 8px 0 #1a1a1a99;
+  overflow: visible;
+  z-index: 10;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  backdrop-filter: blur(6px);
+  --border-angle: 0deg;
+  border-image: linear-gradient(
+    var(--border-angle),
+    #ff8100 0%,
+  ) 1;
+  animation: borderRotate 4s linear infinite;
+  background-image:
+    linear-gradient(90deg, #ff8100 0%, #fff 40%, #4d2702 80%, #ff8100 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation:
+    borderRotate 4s linear infinite,
+    shimmerText 2.5s linear infinite;
+}
+
+@keyframes borderRotate {
+  0% {
+    --border-angle: 0deg;
+  }
+  100% {
+    --border-angle: 360deg;
+  }
+}
+
+@keyframes shimmerText {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+
+.titleText:hover {
+  transform: scale(1.04) translateY(-2px);
+  box-shadow:
+    0 8px 40px 0 #ff8100cc,
+    0 2px 12px 0 #1a1a1a99;
+}
+
+.titleText:hover::after {
+  width: 140px;
+}
+
+.addBtn {
+  position: absolute;
+  right: 24px;
+  background: linear-gradient(90deg, #ff8100 50%, #ff810033 100%);
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-weight: 700;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 24px 0 #ff810033;
+  transition: transform 0.15s, box-shadow 0.2s;
+  top: 15%;
+}
+
+.addBtn:hover {
+  transform: scale(1.05);
+}
+
+.studentTable {
+  width: 100%;
+  max-width: 1340px;
+  margin: 0 auto;
+  background-color: #1c1c1c;
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(255, 145, 0, 0.15);
+}
+
+.controlsWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  background-color: #1c1c1c;
+  position: sticky;
+  top: 70px;
+  z-index: 998;
+  padding: 12px;
+  border-bottom: 1px solid #585353;
+}
+.searchInput {
+  padding: 8px;
+  width: 38%;
+  max-width: 600px;
+  border-radius: 10px;
+  border: none;
+  background-color: #ffffff;
+  color: white;
+  font-size: 16px;
+  outline: none;
+ margin-top: 1.5%;
+ position: relative;
+ left: -0.5%;
+}
+.toggleButtonGroup {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  gap: 1.2rem;
+}
+
+.toggleBtn {
+  background: rgba(26, 26, 26, 0.92);
+  color: white;
+  border: 2px solid transparent;
+  padding: 0.7rem 1.6rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.08rem;
+  letter-spacing: 0.7px;
+  box-shadow: 0 2px 12px #ff810033;
+  transition: background 0.25s, color 0.25s, border 0.25s, box-shadow 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+
+.toggleBtn:hover,
+.toggleBtn:focus {
+  background: rgba(255, 129, 0, 0.12);
+  color: #ff8100;
+  border: 2px solid #ff8100;
+}
+
+.activeToggle {
+  background: linear-gradient(90deg, #ff8100 60%, #ffdc52 100%);
+  color: #fff;
+  font-weight: bold;
+  border: 2px solid #ff8100;
+}
+.tableContainer {
+  max-height: 450px;
+  overflow-y: auto;
+  margin: 0 1rem;
+  border-radius: 8px;
+}
+.detailTable {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #121212;
+  color: #ffffff;
+  text-align: left;
+  table-layout: fixed;
+}
+
+.detailTable thead th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: linear-gradient(to right, #ffb800, #ffaa00);
+  color: #1c1b27;
+  font-weight: bold;
+  padding: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  vertical-align: middle;
+}
+
+.detailTable tbody tr td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #2e2e2e;
+  background-color: #1c1c1c;
+  transition: background-color 0.3s ease;
+}
+
+.detailTable tbody tr:hover td {
+  background-color: rgba(255, 138, 0, 0.3);
+  color: #ffffff;
+}
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 6px 12px;
+  border: none;
+  background: #fff;
+  color: #ff8100;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 6px #ff810033;
+  transition: background 0.2s, color 0.2s, transform 0.13s, box-shadow 0.18s;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination button:hover:not(:disabled),
+.pagination button:focus:not(:disabled) {
+  background: #ff8100;
+  color: #fff;
+  transform: translateY(-2px) scale(1.08);
+  box-shadow: 0 4px 16px #ff810033;
+}
+
+.activePage {
+  background: #ff8100;
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 0 0 4px #ff810033;
+  transform: scale(1.13);
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+
+.modal {
+  background: black;
+  padding: 32px 24px;
+  border-radius: 20px;
+  max-width: 420px;
+  width: 95%;
+  max-height: 500px;
+  height: 95%;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 12px 36px rgba(255, 129, 0, 0.3), 0 0 24px rgba(0, 0, 0, 0.85);
+  animation: fadeInUp 0.4s ease-out;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.modal h3 {
+  text-align: center;
+  font-size: 1.8rem;
+color: #ff8100;
+  margin-bottom: 1rem;
+}
+.modal input,
+.modal select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background-color: #121212;
+  color: #ffffff;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal input:focus,
+.modal select:focus {
+  border-color: #ff5900;
+  outline: none;
+  box-shadow: 0 0 6px rgba(255, 129, 0, 0.5);
+}
+.modal input:hover,
+.modal select:hover {
+  border-color: #ff8100; 
+  background-color: #1c1c1c; 
+  box-shadow: 0 0 6px rgba(255, 170, 0, 0.4); 
+}
+.modal .savebtn {
+  width: 30%;
+  padding: 10px;
+background: linear-gradient(90deg, #ff8100 50%, #ff810033 100%);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.modal .savebtn:hover {
+  background: linear-gradient();
+  transform: scale(1.04);
+}
+.modal .cancelbtn {
+  width: 30%;
+  padding: 10px;
+background: linear-gradient(90deg, #ff8100 50%, #ff810033 100%);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.modal .cancelbtn:hover {
+  background-color: #ff5900;
+  transform: scale(1.04);
+}
+
+
+ .studentCard {
+  background: #1a1a1a;
+  padding: 24px;
+  border-radius: 16px;
+  max-width: 350px;
+  height: 90%;
+  max-height: 300px;
+  width: 90%;
+  color: #f24005;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 10px 30px rgba(255, 129, 0, 0.25), 0 0 20px rgba(0, 0, 0, 0.8);
+  position: relative;
+  animation: fadeInUp 0.4s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}.studentCard h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ff8100;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.studentCard p {
+  margin: 0.4rem 0;
+  font-size: 1.05rem;
+  color: #e0e0e0;
+  letter-spacing: 0.5px;
+}
+
+.studentCard span.label {
+  color: #ff8100;
+  font-weight: 600;
+}
+.modalActions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px; 
+  flex-wrap: wrap;
+}
+.viewBtn{
+  background: #ff8100;
+  height: 20%;
+  width: 30%;
+  font-size: 20px;
+  border: 2px solid #ff8100;
+  border-radius: 5px;
+   font-family: "Ancizar Serif", serif;
+}
+
+.deleteBtn{
+   height: 20%;
+   width: 20%;
+   font-size: 20px;
+   position: relative;
+   left: 5%;
+   background: red;
+   border-radius: 7px;
+}
+@media (max-width: 768px) {
+  .searchInput { width: 100%; }
+}
+
+.closeButton {
+  width: 300px;
+  height: 40px;
+  background: linear-gradient(90deg, #ff8100 50%, #ff810033 100%);
+  color: white;
+  border: none;         
+  outline: none;        
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  font-family: 'Poppins', sans-serif;
+   margin-top: 20px;
+}
+
+.closeButton:hover {
+background: linear-gradient(90deg, #ff8100 50%, #ff810033 100%);
+  transform: scale(1.05);
+}

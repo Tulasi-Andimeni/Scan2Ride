@@ -1,0 +1,469 @@
+.profileContainer {
+  background: linear-gradient(135deg, #1a1a1a 0%, #111111 100%);
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 80px;
+  width: 100vw;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.profileCard {
+  border-radius: 22px;
+  width: 100%;
+  max-width: 950px;
+  padding: 40px 30px 30px 30px;
+  background: linear-gradient(120deg, rgba(0,0,0,0.1) 0%, #1a1a1a 100%);
+  box-shadow:
+    0 0 30px 0 rgba(255, 138, 0, 0.15),
+    0 0 0 2px rgba(255, 138, 0, 0.15),
+    0 8px 32px 0 rgba(0,0,0,0.37);
+  border: 1.5px solid rgba(255, 138, 0, 0.3);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  position: relative;
+  transition: box-shadow 0.4s cubic-bezier(.4,0,.2,1), transform 0.3s cubic-bezier(.4,0,.2,1);
+  margin-top: -2%;
+}
+
+.profileCard:hover {
+  box-shadow: 0 0 20px 1px #ff8100, 0 0 0 1px #ff8100, 0 8px 32px 0 rgba(0,0,0,0.37);
+  transform: scale(1.012);
+}
+
+.personalHeading {
+  width: 100%;
+  text-align: left;
+  font-size: 44px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 30px;
+  padding-left: 10px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 16px #ff8100, 0 2px 8px rgba(255, 138, 0, 0.3);
+  position: relative;
+  top: -30px;
+}
+
+/* .personalHeading::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 10px;
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff8100 60%, transparent 100%);
+  border-radius: 2px;
+  box-shadow: 0 0 8px #ff8100;
+} */
+.personalHeading::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 10px;
+  width: 300px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff8100 60%, transparent 100%);
+  border-radius: 2px;
+  box-shadow: 0 0 8px #ff8100;
+  overflow: hidden;
+}
+
+.personalHeading::before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 10px;
+  width: 150px;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent 0%, #ff8100 40%, #ff8100 60%, transparent 100%);
+  filter: blur(2px);
+  animation: underline-move 2s linear infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes underline-move {
+  0% {
+    left: 20px;
+    width: 0;
+    opacity: 0.7;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    left: 10px;
+    width: 120px;
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    left: 130px;
+    width: 0;
+    opacity: 0.7;
+  }
+}
+
+.cardBody {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: stretch;
+}
+
+.profileLeft {
+  width: 100%;
+  max-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.profileImage {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+  border: 4px solid #ff8100;
+  cursor: pointer;
+  transition: box-shadow 0.4s, transform 0.3s;
+  margin-top: 30px;
+  margin-left: 40px;
+  box-shadow: 0 0 30px 0 #ff8100, 0 0 0 8px rgba(255, 138, 0, 0.1);
+  background: rgba(0,0,0,0.1);
+  background-image: url("./Scan1.jpg");
+  background-size: 100% 100%;
+}
+
+.profileImage:hover {
+  transform: scale(1.06) rotate(-2deg);
+  box-shadow: 0 0 40px 8px #ff8100, 0 0 0 12px rgba(255, 138, 0, 0.15);
+}
+
+.formRight {
+  flex: none;
+  width: 500px;
+  margin-left: 40px;
+}
+
+.formRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.formRow label {
+  width: 140px;
+  font-size: 15px;
+  color: white;
+  font-weight: 600;
+  margin-right: 10px;
+  flex-shrink: 0;
+  text-align: right;
+  letter-spacing: 0.5px;
+}
+
+.inputWithIcon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 340px;
+  position: relative;
+  color: #ff8100;
+}
+
+.inputWithIcon input,
+.inputWithIcon select {
+  padding-left: 38px !important;
+  padding-right: 36px !important;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 12px;
+  color: #ff8100;
+  font-size: 18px;
+  pointer-events: none;
+  filter: drop-shadow(0 0 4px #ff8100);
+}
+
+.formRow input,
+.formRow select,
+.passwordInputWrapper input {
+  height: 46px;
+  width: 100%;
+  min-width: 260px;
+  max-width: 340px;
+  padding: 0 12px;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  background: rgba(0,0,0,0.1);
+  color: #fff;
+  box-sizing: border-box;
+  border-bottom: 2.5px solid rgba(255, 138, 0, 0.3);
+  box-shadow: 0 2px 8px 0 rgba(255, 138, 0, 0.05);
+  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.formRow input:focus,
+.formRow select:focus,
+.passwordInputWrapper input:focus {
+  border-bottom: 2.5px solid #ff8100;
+  background: rgba(255, 138, 0, 0.08);
+  box-shadow: 0 0 12px 0 #ff8100;
+  outline: none;
+}
+
+.passwordInputWrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.passwordInputWrapper input {
+  width: 100%;
+  height: 46px;
+  padding-left: 38px;
+  padding-right: 44px;
+  border-radius: 12px;
+  border-bottom: 2.5px solid rgba(255, 138, 0, 0.3);
+  background: rgba(0,0,0,0.1);
+  color: #fff;
+  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.passwordInputWrapper input:focus {
+  border-bottom: 2.5px solid #ff8100;
+  background: rgba(255, 138, 0, 0.08);
+  box-shadow: 0 0 12px 0 #ff8100;
+}
+
+.toggleIcon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  cursor: pointer;
+  color: #ff8100;
+  transition: color 0.3s;
+}
+
+.toggleIcon:hover {
+  color: #fff;
+}
+
+.saveBtn {
+  background: linear-gradient(90deg, #ff8100 60%, #1a1a1a 100%);
+  color: #fff;
+  border: none;
+  padding: 12px 32px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  letter-spacing: 1px;
+  box-shadow: 0 0 16px 0 #ff8100;
+  transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+  margin-right: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.saveBtn:hover {
+  background: #ff8100;
+  color: #1a1a1a;
+  box-shadow: 0 0 32px 0 #ff8100;
+  transform: translateY(-2px) scale(1.04);
+}
+
+.editIcon {
+  font-size: 24px;
+  color: #ff8100;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+  margin-left: 10px;
+  border-radius: 50%;
+  padding: 8px;
+  background: rgba(255, 138, 0, 0.1);
+}
+
+.editIcon:hover {
+  transform: scale(1.2) rotate(-10deg);
+  color: #fff;
+  background: #ff8100;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.validIcon,
+.validIconPassword {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ff8100;
+  font-size: 18px;
+  filter: drop-shadow(0 0 4px #ff8100);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; transform: scale(1);}
+  50% { opacity: 0.7; transform: scale(1.2);}
+  100% { opacity: 1; transform: scale(1);}
+}
+
+.closeIcon {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  font-size: 28px;
+  color: #ff8100;
+  cursor: pointer;
+  z-index: 10;
+  transition: color 0.3s, background 0.3s, transform 0.2s;
+  padding: 8px;
+  border-radius: 50%;
+  background: rgba(255, 138, 0, 0.1);
+}
+
+.closeIcon:hover {
+  color: #fff;
+  background: #ff8100;
+  transform: rotate(90deg) scale(1.1);
+}
+
+@media (max-width: 992px) {
+  .profileCard {
+    width: 95%;
+    padding: 25px;
+  }
+  .formRight {
+    width: 100%;
+    margin-left: 0;
+  }
+  .cardBody {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .profileContainer {
+    padding: 10px;
+  }
+  .profileImage {
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+  }
+  .personalHeading {
+    font-size: 26px;
+  }
+  .formRow label {
+    width: 100px;
+    font-size: 13px;
+  }
+  .formRow input,
+  .formRow select,
+  .passwordInputWrapper input {
+    height: 38px;
+    font-size: 14px;
+  }
+  .saveBtn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  .closeIcon {
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+  }
+}
+@keyframes floatIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Target all input and select fields inside .profileCard */
+.profileCard input,
+.profileCard select {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: floatIn 0.7s cubic-bezier(.4,0,.2,1) forwards;
+}
+
+/* Add a staggered effect for each input/select */
+.profileCard input:nth-of-type(1),
+.profileCard select:nth-of-type(1) { animation-delay: 0.1s; }
+.profileCard input:nth-of-type(2),
+.profileCard select:nth-of-type(2) { animation-delay: 0.3s; }
+.profileCard input:nth-of-type(3),
+.profileCard select:nth-of-type(3) { animation-delay: 0.5s; }
+.profileCard input:nth-of-type(4),
+.profileCard select:nth-of-type(4) { animation-delay: 0.7s; }
+.profileCard input:nth-of-type(5),
+.profileCard select:nth-of-type(5) { animation-delay: 0.9s; }
+.profileCard input:nth-of-type(6),
+.profileCard select:nth-of-type(6) { animation-delay: 0.11s; }
+
+.profileCard .formRow {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: floatIn 0.7s cubic-bezier(.4,0,.2,1) forwards;
+}
+.profileCard .formRow:nth-of-type(1) { animation-delay: 0.1s; }
+.profileCard .formRow:nth-of-type(2) { animation-delay: 0.3s; }
+.profileCard .formRow:nth-of-type(3) { animation-delay: 0.5s; }
+.profileCard .formRow:nth-of-type(4) { animation-delay: 0.7s; }
+.profileCard .formRow:nth-of-type(5) { animation-delay: 0.9s; }
+.profileCard .formRow:nth-of-type(6) { animation-delay: 0.10s; }
+
+@keyframes floatInContainer {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profileContainer {
+  /* ...your existing styles... */
+  opacity: 0;
+  transform: translateY(60px);
+  animation: floatInContainer 0.8s cubic-bezier(.4,0,.2,1) forwards;
+  animation-delay: 0.1s; /* Optional: delay for a smoother effect */
+}

@@ -1,0 +1,202 @@
+
+.sidebar2-background {
+  height: 100vh;
+  width: 6.5vw;
+  background-color: #0D0D0D; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  border-right: 5px solid #FF8A00;
+  box-shadow: 0 0 20px rgba(255, 193, 7, 0.3);
+  border-radius: 0px 10px 10px 0px;
+  border-left: 10px solid #0D0D0D;
+}
+
+.sidebar2-background.open {
+  width: 160px;
+}
+
+.sidebar2-top {
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.toggle-icon {
+  font-size: 24px;
+  color: #FF8A00;
+  cursor: pointer;
+}
+
+.sidebar2-title {
+  color: #FF8A00;
+  font-weight: bold;
+  text-align: center;
+  margin: 13px 0;
+  font-size: 20px;
+
+}
+
+.sidebar2-navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  top: 12%;
+}
+
+.sidebar2-list {
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  transition: all 0.3s ease;
+  margin: 5px 0;
+}
+
+.sidebar2-list a {
+  text-decoration: none;
+  color: #F5F5F5;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-weight: 500;
+}
+
+.sidebar2-list i {
+  font-size: 22px;
+  min-width: 30px;
+  text-align: center;
+  color: #F5F5F5;
+  transition: color 0.3s ease;
+}
+
+.sidebar2-label {
+  margin-left: 10px;
+  white-space: nowrap;
+}
+
+/* 🔥 Glow Hover */
+.sidebar2-list:hover {
+  background-color:#FF8A00;
+  box-shadow: 0 0 15px rgba(255, 193, 7, 0.6), inset 0 0 10px rgba(255, 193, 7, 0.4);
+  transition: color 0.3s ease;
+}
+
+.sidebar2-list:hover i,
+.sidebar2-list:hover a {
+  color: white;
+}
+
+/* Optional: glowing bullet effect */
+ /* .sidebar2-list::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: #FFC107;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.3s ease;
+}  */
+
+.sidebar2-list:hover::before {
+  opacity: 1;
+}
+.sidebar2-list:hover::before
+ {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px #FF8A00;
+    pointer-events: none;
+}
+
+.sidebar2-list:hover::after
+ {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px #FF8A00;
+    pointer-events: none;
+}
+.sidebar2-logo{
+  height: 25%;
+  width: 55%;
+  /* border: 1px solid white; */
+  border-radius: 50px;
+  position: relative;
+  top: -15%;
+  left: 5%;
+  background-image: url("./logo.png");
+  background-size: 100% 100%;
+}
+
+
+
+
+/* Active state for sidebar list */
+.sidebar2-list.active {
+  background: #FF8A00;
+  color: white;
+  border-radius: 25px; /* Pill shape */
+  position: relative;
+  box-shadow: 
+    0 0 20px rgba(255, 138, 0, 0.7), 
+    inset 0 0 10px rgba(255, 193, 7, 0.5);
+  transition: all 0.3s ease;
+
+}
+
+.sidebar2-list.active i,
+.sidebar2-list.active a {
+  color: white;
+  font-weight: bold;
+}
+
+/* Optional glowing outline for active */
+.sidebar2-list.active::before,
+.sidebar2-list.active::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: transparent;
+  pointer-events: none;
+}
+
+.sidebar2-list.active::before {
+  right: 0;
+  top: -50px;
+  box-shadow: 35px 35px 0 10px #FF8A00;
+}
+
+.sidebar2-list.active::after {
+  right: 0;
+  bottom: -50px;
+  box-shadow: 35px -35px 0 10px #FF8A00;
+}
+

@@ -1,0 +1,74 @@
+
+.container{
+    height: 100vh;
+    width: 100vw;
+  background: radial-gradient(
+  circle at bottom right, 
+  #1A1A1A 90%, 
+  #4d2702 100%,
+);
+
+}
+.scanner-card {
+  width: 100vh;
+height: 70vh;
+  max-width: 24rem;
+   background: radial-gradient(
+  circle at top left, 
+  #1A1A1A 60%, 
+  #4d2702 100%
+);
+  border-radius: 1rem;
+  /* box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); */
+    box-shadow: 0 0 8px  #d69d5d;
+-webkit-box-shadow: 0 0 8px  #d69d5d;
+-moz-box-shadow: 0 0 8px  #d69d5d;
+  padding: 1.5rem;
+  position: relative;
+  left: 35%;
+  top: 10%;
+}
+.scanner-card:hover{
+    box-shadow: 0 0 20px  #d69d5d;
+-webkit-box-shadow: 0 0 20px  #d69d5d;
+-moz-box-shadow: 0 0 20px  #d69d5d;
+}
+.scanner-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  position: relative;
+  left: 5%;
+}
+
+.scanner-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff8100;
+  margin-left: 17%;
+}
+.scanner-subheader {
+  margin-bottom: 1rem;
+  text-align: center;
+  margin-top: -5%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.scanner-result{
+    height: 12%;
+    width: 40%;
+    border: 1px solid black;
+    font-size: 20px;
+    position: relative;
+    top: 65%;
+    left: 40%;
+   padding: 5%;
+   padding-top: 5%;
+    background-color: #ff8100;
+    border-radius: 10px;
+}
+
+
+
+

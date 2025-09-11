@@ -1,0 +1,1121 @@
+
+.businfoMain{
+    height: 90vh;
+    width: 100vw;
+ /* background: linear-gradient(to right, #1A1A1A, #4d2702);  */
+ background-color: black;
+
+}
+.buspageMainbox{
+    height: 90%;
+    width: 95%;
+    /* background-color: #F9FAFB; */
+    display: flex;
+    flex-direction: column;
+   
+}
+.buspageTopbox{
+  height: 35%;
+  /* background-color: white; */
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+   flex-wrap: wrap;
+}
+
+
+ /* .buspageTopboxOne{
+  height:80% ;
+  width: 15%;
+  border: 2px solid black;
+  background-color: orange;
+  border-radius: 45px;
+}
+.buspage-one-top{
+  height: 32%;
+  background-color: orange;
+  border-radius: 45px 45px 0px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+.buspageOneDown{
+  height: 68%;
+  background-color: rgb(247, 221, 173);
+  border-radius: 40px 40px 45px 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.buspageOneDown i{
+  font-size: 80px;
+  transition: ease-in-out cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+.buspageOneDown i:hover{
+  transform: scale(1.1);
+}  */
+
+
+
+
+.buspageTopboxOne {
+    height: 80%;
+    width: 15%;
+    border: none;
+    /* background: linear-gradient(145deg, #FF8A00, #4d2702); */
+    background-color: #FF8A00;
+    border-radius: 45px;
+    box-shadow: 0 10px 20px rgba(26, 26, 26, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    left: 0.5%;
+}
+
+.buspageTopboxOne::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(255, 138, 0, 0.2),
+        rgba(77, 39, 2, 0.2)
+    );
+    border-radius: 45px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.buspageTopboxOne:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(26, 26, 26, 0.3);
+}
+
+.buspageTopboxOne:hover::before {
+    opacity: 1;
+}
+
+.buspageOneTop {
+    height: 32%;
+    background: transparent;
+    border-radius: 45px 45px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(26, 26, 26, 0.3);
+    position: relative;
+    z-index: 1;
+     font-family: "Ancizar Serif", serif;
+    /* background-color: #FF8A00; */
+}
+
+.buspageOneDown {
+    height: 68%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 40px 40px 45px 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+}
+
+.buspageOneDown::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        145deg,
+        rgba(255, 138, 0, 0.1),
+        rgba(77, 39, 2, 0.1)
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.buspageOneDown:hover::before {
+    opacity: 1;
+}
+
+.buspageOneDown i {
+    font-size: 80px;
+    color: white;
+    transition: all 0.4s cubic-bezier(0.215, 0.610, 0.355, 1);
+    text-shadow: 2px 2px 4px rgba(26, 26, 26, 0.3);
+    position: relative;
+    z-index: 1;
+    
+}
+
+.buspageOneDown i:hover {
+    transform: scale(1.1);
+    color: #FF8A00;
+    /* text-shadow: 
+        0 0 20px rgba(255, 138, 0, 0.4),
+        0 0 40px rgba(255, 138, 0, 0.2); */
+}
+
+/* Add these keyframes for enhanced animations */
+/* @keyframes glowPulse {
+    0%, 100% {
+        text-shadow: 
+            0 0 20px rgba(255, 138, 0, 0.4),
+            0 0 40px rgba(255, 138, 0, 0.2);
+    }
+    50% {
+        text-shadow: 
+            0 0 30px rgba(255, 138, 0, 0.6),
+            0 0 60px rgba(255, 138, 0, 0.3);
+    }
+} */
+
+@keyframes borderGlow {
+    0%, 100% {
+        box-shadow: 0 10px 20px rgba(26, 26, 26, 0.2);
+    }
+    50% {
+        box-shadow: 0 15px 30px rgba(255, 138, 0, 0.3);
+    }
+}
+
+/* Add these animation triggers */
+.buspageTopboxOne {
+    animation: borderGlow 3s infinite;
+}
+
+.buspageOneDown i:hover {
+    animation: glowPulse 2s infinite;
+}
+
+/* Add media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    .buspageTopboxOne {
+        width: 20%;
+    }
+
+    .buspageOneTop {
+        font-size: 32px;
+    }
+
+    .buspageOneDown i {
+        font-size: 60px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .buspageTopboxOne {
+        width: 25%;
+    }
+
+    .buspageOneTop {
+        font-size: 28px;
+    }
+
+    .buspageOneDown i {
+        font-size: 50px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.buspageTopboxTwo {
+    height: 80%;
+    width: 34%;
+    background: linear-gradient(145deg, #1A1A1A, #4d2702);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(26, 26, 26, 0.2);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+     box-shadow: 0 0 10px  #d69d5d;
+-webkit-box-shadow: 0 0 10px  #d69d5d;
+-moz-box-shadow: 0 0 10px  #d69d5d;
+position: relative;
+left: 2%;
+}
+
+.buspageTopboxTwo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        rgba(255, 138, 0, 0.05),
+        transparent
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.buspageTopboxTwo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(26, 26, 26, 0.3);
+      box-shadow: 0 0 20px  #d69d5d;
+-webkit-box-shadow: 0 0 20px  #d69d5d;
+-moz-box-shadow: 0 0 20px  #d69d5d;
+}
+
+
+.buspageTopboxTwo:hover::before {
+    opacity: 1;
+    
+}
+
+.buspageTwoRight {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex-direction: column;
+    padding: 20px;
+    position: relative;
+}
+
+.buspageTwoLeft {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.buspageLeftCircle {
+    height: 60%;
+    width: 80%;
+    /* border-radius: 50%; */
+    border: none;
+    /* background: linear-gradient(145deg, #FF8A00, #4d2702); */
+    /* box-shadow: 
+        0 5px 15px rgba(26, 26, 26, 0.2),
+        inset 0 2px 5px rgba(255, 255, 255, 0.1); */
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    left: -20%;
+    font-size: 70px;
+    padding-left: 18%;
+    padding-top: -5%;
+  
+}
+
+.buspageLeftCircle::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    /* background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    ); */
+    transform: rotate(45deg);
+    /* animation: lightSweep 3s infinite; */
+}
+
+.buspageStatus {
+    height: 30%;
+    width: 90%;
+    display: flex;
+    align-items: start;
+    font-size: 25px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #FF8A00;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: all 0.3s ease;
+    bottom: 7px;
+     font-family: "Ancizar Serif", serif;
+}
+
+.buspageStatus::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 30px;
+    height: 3px;
+    background: #FF8A00;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.buspageStatus:hover::after {
+    width: 50px;
+}
+
+.buspageDay,
+.buspageDate {
+    height: 20%;
+    width: 90%;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    /* font-family: 'Poppins', sans-serif; */
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: all 0.3s ease;
+    top: 18px;
+    left: 20px;
+    /* background: rgba(26, 26, 26, 0.2); */
+      font-family: "Ancizar Serif", serif;
+    padding: 10px;
+}
+
+.buspageDay:hover,
+.buspageDate:hover {
+    transform: translateX(5px);
+}
+
+/* Add animations */
+@keyframes lightSweep {
+    0% {
+        transform: rotate(45deg) translateX(-100%);
+    }
+    50% {
+        transform: rotate(45deg) translateX(100%);
+    }
+    100% {
+        transform: rotate(45deg) translateX(100%);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Add responsive adjustments */
+@media screen and (max-width: 1024px) {
+    .buspageStatus {
+        font-size: 22px;
+    }
+    
+    .buspageDay,
+    .buspageDate {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .buspageTopboxTwo {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    .buspageStatus {
+        font-size: 20px;
+    }
+    
+    .buspageDay,
+    .buspageDate {
+        font-size: 16px;
+    }
+
+    .buspageLeftCircle{
+        width: 70%;
+        height: 60%;
+    }
+}
+
+
+
+
+.buspageTopboxThird {
+    height: 80%;
+    width: 34%;
+    background: linear-gradient(145deg, #4d2702, #1A1A1A);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(26, 26, 26, 0.2);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+     box-shadow: 0 0 10px  #d69d5d;
+-webkit-box-shadow: 0 0 10px  #d69d5d;
+-moz-box-shadow: 0 0 10px  #d69d5d;
+position: relative;
+left: 1%;
+}
+
+.buspageTopboxThird::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        rgba(255, 138, 0, 0.1),
+        transparent
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.buspageTopboxThird:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(26, 26, 26, 0.3);
+     box-shadow: 0 0 20px  #d69d5d;
+-webkit-box-shadow: 0 0 20px  #d69d5d;
+-moz-box-shadow: 0 0 20px  #d69d5d;
+}
+
+.buspageTopboxThird:hover::before {
+    opacity: 1;
+}
+
+.buspageThirdPhoto {
+    height: 100%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    position: relative;
+}
+
+.buspageThirdRight {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 15px;
+    gap: 10px;
+    position: relative;
+}
+
+/* 
+.driverImage {
+   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* border-radius: 50%; 
+  display: block;
+    box-shadow: 0 0 10px rgba(255, 138, 0, 0.5);
+} */
+
+.buspagePhotoBox {
+    height: 100px;
+    width: 120px;
+    border: none;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 
+        0 5px 15px rgba(26, 26, 26, 0.2),
+        inset 0 0 0 1px rgba(255, 138, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(255, 138, 0, 0.5);
+}
+.buspagePhotoBox img{
+  height: 100%;
+  width: 100%;
+}
+/* 
+.buspagePhotoBox::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 138, 0, 0.1),
+        transparent
+    );
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+} */
+
+.buspagePhotoBox:hover::after {
+    transform: translateX(100%);
+}
+
+.buspageRightBox {
+    height: 24%;
+    width: 90%;
+    font-size: 18px;
+    letter-spacing: 0.9px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-weight: 600;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(26, 26, 26, 0.2);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+     font-family: "Ancizar Serif", serif;
+}
+
+.buspageRightBox::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: #FF8A00;
+    transition: all 0.3s ease;
+}
+
+.buspageRightBox:hover {
+    background: rgba(26, 26, 26, 0.3);
+    transform: translateX(5px);
+}
+
+.buspageRightBox:hover::before {
+    width: 5px;
+    box-shadow: 0 0 20px rgba(255, 138, 0, 0.5);
+}
+
+/* Add animations */
+@keyframes shimmer {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes borderPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(255, 138, 0, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 4px rgba(255, 138, 0, 0);
+    }
+}
+
+
+
+.buspageLastbox{
+  height: 10%;
+  width: 108%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: -3%;
+}
+
+
+
+
+
+.buspageLastTitle1 {
+    height: 100%;
+    width: 40%;
+    font-size: 30px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-family: "Ancizar Serif", serif;
+    padding-left: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FF8A00;
+    position: relative;
+    text-shadow: 2px 2px 4px rgba(26, 26, 26, 0.2);
+    overflow: hidden;
+    animation: titlePulse 2s infinite;
+    /* bottom: 10%; */
+    padding-top: 0.5%;
+    padding-left: 6%;
+ 
+}
+
+/* Animated gradient background */
+.buspageLastTitle::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        transparent 25%,
+        rgba(255, 138, 0, 0.1) 50%,
+        transparent 75%
+    );
+    animation: gradientMove 3s linear infinite;
+    z-index: -1;
+}
+
+/* Animated underline */
+.buspageLastTitle::after {
+    content: '';
+    position: absolute;
+    left: 125px;
+    top: 10px;
+    width: 10px;
+    height: 3px;
+    background: #FF8A00;
+    border-radius: 5px;
+    animation: underlineGlow 2s infinite;
+    box-shadow: 0 0 10px rgba(255, 138, 0, 0.5);
+}
+
+/* Side accent with moving light */
+.buspageLastTitle span {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 70%;
+    background: linear-gradient(to bottom, #4d2702, #FF8A00);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.buspageLastTitle span ::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        white,
+        transparent
+    );
+    animation: lightMove 2s linear infinite;
+}
+
+/* Animations */
+@keyframes titlePulse {
+    0%, 100% {
+        color: #FF8A00;
+    }
+    50% {
+        color: #ff9d2b;
+    }
+}
+
+@keyframes gradientMove {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes underlineGlow {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(255, 138, 0, 0.5);
+        width: 100px;
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 138, 0, 0.8);
+        width: 200px;
+    }
+}
+
+@keyframes lightMove {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+/* Hover effects */
+.buspageLastTitle {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
+}
+
+.buspageLastTitle::after {
+    width: 100px;
+    box-shadow: 0 0 20px rgba(255, 138, 0, 0.8);
+    transition: all 0.3s ease;
+}
+
+/* Media queries */
+@media screen and (max-width: 768px) {
+    .buspageLastTitle {
+        font-size: 22px;
+        padding-left: 35px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .buspageLastTitle {
+        font-size: 20px;
+        padding-left: 30px;
+    }
+}
+
+
+
+
+
+
+
+
+.buspageLastTable{
+    position: relative;
+    top: 80%;
+    width: 80%;
+    height: 5%;
+     box-shadow: 0 0 20px rgba(255, 138, 0, 0.2); 
+
+}
+.buspageLastTable table {
+    width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  border-radius: 12px; 
+   overflow: hidden;
+    box-shadow: 0 0 20px rgba(255, 138, 0, 0.2); 
+
+}
+
+.buspageLastTable table th {
+      background: linear-gradient(to right, #ff8a00, #ffae42);
+  color: #1C1B27;
+  padding: 16px;
+  text-align: center;
+  font-family: "Ancizar Serif", serif;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  border-top: 2px solid #ffae42;
+}
+
+td {
+     padding: 14px 10px;
+  text-align: center;
+  font-family: "Ancizar Serif", serif;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+.buspageLastTable table th:first-child {
+  border-top-left-radius: 12px;
+}
+
+.buspageLastTable table th:last-child {
+  border-top-right-radius: 12px;
+}
+ 
+.buspageLastTable table tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.buspageLastTable table tbody tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.buspageLastTable table tbody tr:hover {
+  background-color: rgba(255, 138, 0, 0.2);
+  cursor: pointer;
+  transform: scale(1.01);
+} 
+
+
+.view-btn {
+  /* background-color: #facc15; 
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+   font-family: "Ancizar Serif", serif; */
+    background-color: #ff8a00;
+  color: #1C1B27;
+  padding: 6px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 0 8px rgba(255, 138, 0, 0.6);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.pagination button {
+  background-color: #FF8A00;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background-color: black;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+
+
+
+/* ----------------- Default styles already defined above ----------------- */
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .buspage-topbox {
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: auto;
+    gap: 0px;
+    /* padding: 10px 0; */
+  }
+
+  /* .buspageTopboxOne,
+  .buspage-topbox-two,
+  .buspageTopboxThird {
+    width: 80%;
+  } */
+
+  .buspage-mainbox {
+    width: 98%;
+  }
+
+  .buspage-last-title {
+    font-size: 20px;
+  }
+
+  .buspage-right-box1 {
+    font-size: 16px;
+  }
+
+  .buspage-one-top {
+    font-size: 30px;
+  }
+
+  .buspageOneDown i { 
+    font-size: 60px;
+  }
+} 
+
+/* 🟡 For Phones (max-width: 767px) */
+@media screen and (max-width: 767px) {
+  .buspage-topbox {
+    flex-direction: column;
+    height: auto;
+    gap: 15px;
+    padding: 15px 0;
+  }
+
+  /* .buspageTopboxOne,
+  .buspage-topbox-two,
+  .buspageTopboxThird {
+    width: 90%;
+    height: auto;
+    flex-direction: column;
+  } */
+
+  .buspage-mainbox {
+    width: 100%;
+    height: auto;
+  }
+
+  .buspage-left-circle {
+    width: 50%;
+    height: 50%;
+  }
+
+  .buspage-right-box1 {
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .buspage-one-top {
+    font-size: 24px;
+  }
+
+  .buspageOneDown i {
+    font-size: 40px;
+  }
+
+  .buspageLastbox {
+    height: auto;
+  }
+
+  .buspage-last-title {
+    font-size: 18px;
+    padding-left: 20px;
+  }
+
+  table {
+    font-size: 12px;
+    overflow-x: auto;
+    display: block;
+    white-space: nowrap;
+  }
+
+    .view-btn {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+}
+
+
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 350px;
+  max-width: 90%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+
+.modal h3 {
+  margin-bottom: 1rem;
+  color: #1A1A1A;
+}
+
+.modal p {
+  margin: 0.5rem 0;
+color: #1A1A1A;
+}
+
+.closeBtn {
+  margin-top: 1.5rem;
+  background-color: #FF8A00;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.closeBtn:hover {
+  background-color:black;
+  color:white;
+}
+
+.viewBtn {
+  /* background-color: #FF8A00;
+  color: white;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold; */
+   background-color: #ff8a00;
+  color: white;
+  padding: 6px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 0 8px rgba(255, 138, 0, 0.6);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.viewBtn:hover {
+    background-color: #ffaa33;
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

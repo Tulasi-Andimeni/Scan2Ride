@@ -1,0 +1,125 @@
+
+
+
+
+
+.nav {
+  width: 100vw;
+  height: 10vh;
+  /* background-color: #0D0D0D; Dark background */
+  background: linear-gradient(
+    to right,
+    #1A1A1A 20%, 
+    #4d2702 100% 
+  );
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 15px rgba(255, 193, 7, 0.3); /* Glow */
+  padding: 0 20px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.nav1 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  
+}
+
+.nav1-sub1 {
+  font-size: 28px;
+  color: #FFC107;
+  cursor: pointer;
+}
+
+/* .search-bar {
+  width: 35%;
+  height: 30px;
+  /* padding-left: 20px; 
+  
+  font-size: 14px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background-color: white;
+  color: #F5F5F5;
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.2);
+  transition: box-shadow 0.3s ease;
+} */
+ .search-bar{
+     width: 35%;
+
+  height: 30px;
+  border-radius: 10px;
+  background: white;
+  color: var(--text);
+  border: none;
+  font-size: 14px;
+ }
+
+.search-bar:focus {
+  /* box-shadow: 0 0 15px rgba(255, 193, 7, 0.5); */
+   outline: 2px solid #FF8A00;
+}
+
+.nav1-sub2 {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-image: url("./Scan1.jpg");
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #FFC107;
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.4);
+}
+
+/* 🔁 Responsive */
+@media screen and (max-width: 768px) {
+  .nav1 {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-bar {
+    width: 90%;
+  }
+
+  .nav1-sub1,
+  .nav1-sub2 {
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+  }
+}
+.nav1-sub1 {
+  flex: 1;
+}
+
+.profile-icon-container {
+  cursor: pointer;
+  margin-right: 10px;
+  position:absolute;
+  right:100px;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+.profile-icon-container{
+  height: 90%;
+  width: 4.5%;
+  position: relative;
+  left: -5%;
+  top: 5%;
+  border-radius: 50px;
+  background-image: url("./Scan1.jpg");
+  background-size: 100% 100%;
+}

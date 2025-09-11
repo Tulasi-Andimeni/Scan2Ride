@@ -1,0 +1,396 @@
+/* Root Vars */
+:root {
+  --accent-orange: #FF8A00;
+  --deep-black:   #0D0D0D;
+  --dark-brown:   #4D2702;
+  --white:        #FFFFFF;
+  --light-gray:   #EFE5D8;
+  --shadow-light: 0 4px 12px rgba(255,138,0,0.20);
+  --shadow-deep:  0 8px 24px rgba(0,0,0,0.15);
+  --return-bg:    #FFF9F2;
+  --return-border:#FF8A00;
+}
+
+/* Layout */
+.fullscreen {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--deep-black);
+  padding: 24px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+/*  Heading */
+.heading {
+  margin-top: 0;
+  margin-bottom: 18px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 28px;
+  font-family: "Inter", sans-serif;
+  color: var(--accent-orange);
+}
+
+/* Banner */
+.animationWrapper {
+  position: relative;
+  height: 140px;
+  margin-bottom: 24px;
+  overflow: hidden;
+  background: linear-gradient(to top, var(--deep-black), transparent);
+}
+.busAnim {
+  position: absolute;
+  bottom: 12px;
+  left: -300px;
+  height: 180px;
+  width: auto;
+  filter: drop-shadow(0 3px 4px rgba(0,0,0,0.35));
+  animation-name: busMove;
+  animation-duration: 14s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  /* border: 2px solid white; */
+  margin-bottom: -27px;
+}
+@keyframes busMove {
+  to { transform: translateX(140vw); }
+}
+.animationWrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-image: repeating-linear-gradient(90deg, white 0 14px, transparent 14px 28px);
+  animation-name: roadSlide;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes roadSlide {
+  to { background-position: -28px 0; }
+}
+
+/* Search */
+.search {
+  display: block;
+  margin: 0 auto 24px;
+  max-width: 340px;
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 14px;
+  background-color: var(--white);
+  color: var(--deep-black);
+  border: 1px solid var(--accent-orange);
+  border-radius: 8px;
+  box-shadow: var(--shadow-light);
+}
+
+/* List */
+.busList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Card */
+.busCard {
+  background-color: black;
+  border-radius: 16px;
+  padding: 20px 26px;
+  box-shadow: 0 6px 18px rgba(255,138,0,0.25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.busCard:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 28px rgba(255,138,0,0.35);
+}
+
+/* Return-Bus extra style  */
+.returnBus {
+  background-color:  var(--deep-white);
+  /* border: 2px dashed var(--return-border); */
+}
+
+/* Card Text */
+.busNo {
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--deep-);
+}
+.route {
+  font-size: 14px;
+  color:  var(--deep-white);
+  margin: 4px 0;
+  /* border: 2px solid rebeccapurple; */
+}
+
+/* label Outbound / Return */
+.directionLabel {
+  display: inline-block;
+  font-size: 12px;
+  color: var(--white);
+  background-color: var(--accent-orange);
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-bottom: 6px;
+}
+
+/* Capacity bar */
+.capacityBar {
+  position: relative;
+  height: 18px;
+  background-color: var(--light-gray);
+  border-radius: 9px;
+  overflow: hidden;
+  margin: 8px 0;
+  /* border: 2px solid green; */
+}
+.filledBar {
+  height: 100%;
+  background-color: var(--accent-orange);
+}
+
+/* small counter */
+.capacityBar span {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: var(--deep-black);
+}
+.checkout {
+  font-size: 13px;
+  color:  var(--deep-white);
+}
+
+/* Right side */
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.driverImg {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.20);
+  transition: transform 0.3s;
+}
+.driverImg:hover { transform: scale(1.1); }
+.driverName {
+  font-size: 13px;
+  color: var(--deep-black);
+}
+
+/* Buttons */
+.viewBtn,
+.closeBtn {
+  background-color: var(--accent-orange);
+  color: var(--white);
+  border: none;
+  padding: 8px 18px;
+  font-size: 13px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(255,138,0,0.30);
+}
+.viewBtn:hover,
+.closeBtn:hover {
+  background-color: #e67600;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin: 24px 0 12px;
+}
+.pagination button {
+  background-color: var(--white);
+  color: var(--deep-black);
+  border: 1px solid var(--accent-orange);
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.pagination button:not(:disabled):hover {
+  background-color: var(--accent-orange);
+  color: var(--white);
+}
+.pagination .active {
+  background-color: var(--accent-orange);
+  color: var(--white);
+  font-weight: bold;
+}
+
+
+/* Modal */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.modal {
+  background-color: var(--deep-black);
+  border-radius: 16px;
+  padding: 24px;
+  width: 90%;
+  max-width: 440px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 6px 18px rgba(255,138,0,0.25);
+
+  /* border: 2px solid rebeccapurple; */
+}
+.mapBox {
+  height: 220px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .busCard {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .right {
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+  }
+}
+/* New for animation ========== */
+.animationWrapper {
+  position: relative;
+  height: 140px;
+  margin-bottom: 24px;
+  overflow: hidden;
+  background: linear-gradient(to top, var(--deep-black), transparent);
+}
+
+.busAnim {
+  position: absolute;
+  bottom: 8px;
+  left: -220px;
+  height: 100px;
+  width: auto;
+  filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.35));
+  animation-name: busMove;
+  animation-duration: 14s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes busMove {
+  from {
+    left: -250px;
+  }
+  to {
+    left: 110%;
+  }
+}
+
+/* New for modal driver info */
+.driverProfile {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+
+   /* border: 2px solid rebeccapurple; */
+}
+
+.driverLargeImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  
+}
+
+.driverInfo h2 {
+  margin: 0 0 8px;
+  color: var(--deep-black);
+}
+
+.modalTitle {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #333;
+}
+
+.driverContent {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+}
+
+.driverLargeImg {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #222;
+}
+
+.driverInfo p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  color: white;
+}
+
+
+
+/* Animation for modal */
+@keyframes fadeScaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animateIn {
+  animation: fadeScaleIn 0.4s ease forwards;
+}
+
+/* fade-in for modal overlay */
+@keyframes fadeOverlayIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modalOverlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: fadeOverlayIn 0.3s ease forwards;
+}

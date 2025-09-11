@@ -1,0 +1,38 @@
+.video-frame {
+  position: relative;
+  width: 300px;
+  height: 130px;
+  display: inline-block;
+  overflow: hidden;
+  left: 20px;
+}
+
+.video-frame video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Corners only */
+.video-frame::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+  background:
+    linear-gradient(to right, #ff8100 20px, transparent 10px) top left,
+    linear-gradient(to left, #ff8100 20px, transparent 10px) top right,
+    linear-gradient(to right, #ff8100 20px, transparent 10px) bottom left,
+    linear-gradient(to left, #ff8100 20px, transparent 10px) bottom right,
+    linear-gradient(to bottom, #ff8100 20px, transparent 10px) top left,
+    linear-gradient(to bottom, #ff8100 20px, transparent 10px) top right,
+    linear-gradient(to top, #ff8100 20px, transparent 10px) bottom left,
+    linear-gradient(to top, #ff8100 20px, transparent 10px) bottom right;
+  background-repeat: no-repeat;
+  background-size: 15px 4px, 15px 4px, 15px 4px, 15px 4px,
+                   4px 15px, 4px 15px, 4px 15px, 4px 15px;
+}
