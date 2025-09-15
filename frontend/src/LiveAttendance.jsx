@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState, useCallback } from "react";
 import io from "socket.io-client";
-import styles from "./styles/liveattendance.module.css";
+import styles from "./styles/liveAttendance.module.css";
 import { BASE_URL } from "./config";
 
 const socket = io("http://localhost:5000");
