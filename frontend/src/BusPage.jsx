@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import styles from './styles/Buspage.module.css';
+import styles from './styles/BusPage.module.css';
 import { BASE_URL } from "./config";
 
 const buses = [218, 229, 215, 235, 446, 216, 204, 238];
