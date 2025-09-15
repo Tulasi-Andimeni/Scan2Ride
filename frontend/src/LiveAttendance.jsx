@@ -4,7 +4,7 @@ import io from "socket.io-client";
 import styles from "./styles/liveAttendance.module.css";
 import { BASE_URL } from "./config";
 
-const socket = io("http://localhost:5000");
+const socket = io(`${BASE_URL}`);
 
 const PAGE_SIZE = 7;
 
